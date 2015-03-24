@@ -22,6 +22,11 @@
 use strict;
 use POSIX;
 
+use File::Spec::Functions qw(rel2abs);
+use File::Basename;
+
+my $script_dir = dirname(rel2abs($0));
+
 my $version = '20080225';
 my $gui = 0;
 my $earthfile = '';		# world map. location will be found later.
@@ -493,6 +498,9 @@ sub read_cty {
 	elsif (-e "/usr/local/share/dxcc/cty.dat") {
 		$filename = "/usr/local/share/dxcc/cty.dat";
 	}
+	elsif (-e "$script_dir/cty.dat") {
+                $filename = "$script_dir/cty.dat";
+        }
 	else {
 		$filename = $0;
 		$self = 1;
