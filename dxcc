@@ -50,7 +50,7 @@ my $csadditions="(^P\$)|(^M{1,2}\$)|(^AM\$)";
 if (!$ARGV[0] || ($ARGV[0] =~ /-[^mg]/)) {
 print "$credits
 
-Usage:  dxcc <callsign>\n\n";
+Usage:\t dxcc <callsign>\n\n";
 		
 exit;
 }
@@ -70,19 +70,19 @@ unless ($gui) {
 
 	my ($bearing, $distance) = &qrbqtf($mylat, $mylon, $dxcc[4], $dxcc[5]);
 
-	print "Callsign: \U$args\n\n";
+	print "Callsign:\t\U$args\n\n";
 
-	print "Main Prefix:    $dxcc[7]\n";
-	print "Country Name:   $dxcc[0]\n";
-	print "WAZ Zone:       $dxcc[1]\n";
-	print "ITU Zone:       $dxcc[2]\n";
-	print "Continent:      $dxcc[3]\n";
-	print "Latitude:       $dxcc[4]\n";
-	print "Longitude:      $dxcc[5]\n";
-	print "UTC shift:      $dxcc[6]\n";
+	print "Main Prefix:\t$dxcc[7]\n";
+	print "Country Name:\t$dxcc[0]\n";
+	print "WAZ Zone:\t$dxcc[1]\n";
+	print "ITU Zone:\t$dxcc[2]\n";
+	print "Continent:\t$dxcc[3]\n";
+	print "Latitude:\t$dxcc[4]\n";
+	print "Longitude:\t$dxcc[5]\n";
+	print "UTC shift:\t$dxcc[6]\n";
 	if ($mylat || $mylon) {
-	print "Bearing:        $bearing°\n";
-	print "Distance:       $distance km\n";
+	print "Bearing:\t$bearing°\n";
+	print "Distance:\t$distance km\n";
 	}
 	print "\n";
 }
